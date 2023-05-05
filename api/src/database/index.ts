@@ -1,7 +1,7 @@
 import { Client, QueryArrayConfig } from "pg";
 
 const client = new Client({
-  host: "db_postgres",
+  host: "localhost",
   port: 5432,
   user: "root",
   password: "root",

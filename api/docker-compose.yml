@@ -9,6 +9,8 @@ services:
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
+    depends_on:
+      - db_postgres
   db_postgres:
     image: "postgres"
     environment:
@@ -16,6 +18,7 @@ services:
       POSTGRES_PASSWORD: "root"
       POSTGRES_DB: "mysales"
     volumes:
-      - ./db_data:/data/postgres
+      - ./db_data:/var/lib/postgres/data
+      - ./src/database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
     ports:
       - "5432:5432"
