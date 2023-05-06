@@ -1,10 +1,12 @@
-import express, { Request, Response } from "express";
+import express from "express";
+import cors from "./middlewares/cors";
+import routes from "./routes";
 
 const app = express();
 
-app.get("/", (request: Request, response: Response) => {
-  response.send("Hello world!");
-});
+app.use(express.json());
+app.use(cors);
+app.use(routes);
 
 const PORT = 4000;
 const HOST = "0.0.0.0";
