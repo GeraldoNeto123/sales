@@ -1,7 +1,7 @@
-import { Client, QueryArrayConfig } from "pg";
+import { Client } from "pg";
 
 const client = new Client({
-  host: "localhost",
+  host: "db_postgres",
   port: 5432,
   user: "root",
   password: "root",
@@ -10,8 +10,10 @@ const client = new Client({
 
 client.connect();
 
-exports.query = async (query: QueryArrayConfig, values: any) => {
+const query = async (query: string, values?: any) => {
   const { rows } = await client.query(query, values);
 
   return rows;
 };
+
+export default { query };
