@@ -6,7 +6,7 @@ app.get("/", (request: Request, response: Response) => {
   response.send("Hello world!");
 });
 
-const PORT = 3003;
+const PORT = 4000;
 const HOST = "0.0.0.0";
 
 app.listen(PORT, HOST, () =>
