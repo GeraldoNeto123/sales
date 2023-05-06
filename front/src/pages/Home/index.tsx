@@ -1,8 +1,12 @@
-// import { Container } from './styles';
+import { Link } from 'react-router-dom';
+import { Container } from './styles';
 
 function Home() {
     return (
-        <div>Home</div>
+        <Container>
+            <h1>Home</h1>
+            <Link to='/transactions/new'>New Transaction</Link>
+        </Container>
     )
 }
 

@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import Home from "../pages/Home";
 import ErrorPage from "../error-page";
+import NewTransaction from "../pages/NewTransaction";
 
 export default function Routes() {
   const router = createBrowserRouter([
@@ -11,6 +12,10 @@ export default function Routes() {
       path: "/",
       element: <Home />,
       errorElement: <ErrorPage />,
+    },
+    {
+      path: "/transactions/new",
+      element: <NewTransaction />
     },
   ]);
 
