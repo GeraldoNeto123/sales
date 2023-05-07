@@ -1,7 +1,27 @@
-docker-compose up --build -d
+O projeto pode ser executado localmente com um único comando, para isso é necessário ter o Docker instalado na máquina.
 
-docker exec -it front_react sh
-yarn && yarn dev
+Na raiz do projeto, execute:
+```bash
+   docker-compose up -d --build
+   ```
+O front-end estará rodando no endereço http://localhost:3000.
+O back-end estará rodando no endereço http://localhost:4000.
+## Descrição do Projeto:
+A aplicação desenvolvida tem a seguinte estrutura:
 
-docker exec -it api_node sh
-yarn && yarn dev
+   - Página inicial: Traz um resumo de entradas, saídas e saldo total. Uma tabela listando todas as transações, e um botão para cadastrar novas transações.
+   - Página de novas transações: formulario para upload de um arquivo com novas transações.   
+## Tecnologias usadas
+1. Front
+   - Vite
+   - React.js 
+   - React router
+   - Styled-components
+   - React icons
+   - Typescript
+<br>
+2. back
+   - Node.js
+   - Express
+   - Typescript
+   - Postgres
