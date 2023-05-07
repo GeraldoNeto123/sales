@@ -6,9 +6,9 @@ export default function Header() {
     return (
         <Container>
             <div className="headerContainerContent">
-                <div>
+                <Link to='/'>
                     <h1 className="logo">My sales</h1>
-                </div>
+                </Link>
                 <div>
                     <Link to='/transactions/new'>
                         <button
