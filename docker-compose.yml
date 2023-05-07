@@ -9,13 +9,15 @@ services:
       POSTGRES_DB: "mysales"
     tty: true
     volumes:
-      - ./api/db_data:/var/lib/postgresql/data
+      - ./api/db_data:/var/lib/postgresql/db_postgres
       - ./api/src/database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
     ports:
       - "5432:5432"
+
   api_node:
     build: ./api
-    command: yarn start
+    container_name: api_node
+    command: sh -c "yarn && yarn dev"
     ports:
       - "4000:4000"
     volumes:
@@ -23,13 +25,17 @@ services:
       - ./api/node_modules:/usr/app/node_modules
     depends_on:
       - db_postgres  
+
   front_react:
     build: ./front
-    command: yarn dev
+    container_name: front_react
+    command: sh -c "yarn && yarn dev"
     ports:
       - "3000:3000"
     volumes:
-      - ./front:/usr/app
+      - type: bind
+        source: ./front
+        target: /usr/app
       - ./front/node_modules:/usr/app/node_modules
-    depends_on:
-      - api_node
+    tty: true
+    

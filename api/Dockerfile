@@ -2,12 +2,13 @@ FROM node:20-alpine
 
 WORKDIR /usr/app
 
-COPY package*.json ./
+COPY package.json ./
+COPY yarn.lock ./
+COPY . .
 
 RUN yarn install
 
-COPY . .
 
 EXPOSE 4000
 
-CMD ["yarn", "start"]
+# CMD ["yarn", "dev"]
