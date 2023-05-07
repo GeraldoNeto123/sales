@@ -8,7 +8,19 @@ interface Create {
   type: string;
 }
 
-class CategoriesRepository {
+class TransactionsRepository {
+  async findAll() {
+    const rows = await db.query(`
+        SELECT transactions.*, sellers.name AS seller_name, products.name AS product_name
+        FROM transactions
+        LEFT JOIN sellers ON sellers.id = transactions.seller_id
+        LEFT JOIN products ON products.id = transactions.product_id
+        ORDER BY transactions.date DESC
+    `);
+
+    return rows;
+  }
+
   async create({ productId, sellerId, amount, date, type }: Create) {
     const [row] = await db.query(
       `
@@ -23,4 +35,4 @@ class CategoriesRepository {
   }
 }
 
-export default new CategoriesRepository();
+export default new TransactionsRepository();
