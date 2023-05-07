@@ -5,6 +5,7 @@ import filesPayloadExists from "./middlewares/filesPayloadExists";
 
 const router = Router();
 
+router.get("/transactions", TransactionController.index);
 router.post(
   "/transactions",
   fileUpload({ createParentPath: true, useTempFiles: true }),
