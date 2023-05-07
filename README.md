@@ -6,11 +6,13 @@ Na raiz do projeto, execute:
    ```
 O front-end estará rodando no endereço http://localhost:3000.
 O back-end estará rodando no endereço http://localhost:4000.
+
+Para realizar teste utilize o arquivo **sales.txt** que se encontra na raiz do projeto.
 ## Descrição do Projeto:
 A aplicação desenvolvida tem a seguinte estrutura:
 
-   - Página inicial: Traz um resumo de entradas, saídas e saldo total. Uma tabela listando todas as transações, e um botão para cadastrar novas transações.
-   - Página de novas transações: formulario para upload de um arquivo com novas transações.   
+   - Página inicial: traz um resumo de entradas, saídas e saldo total. Uma tabela listando todas as transações e um botão para cadastrar novas transações.
+   - Página de novas transações: formulário para upload de um arquivo com novas transações.   
 ## Tecnologias usadas
 1. Front
    - Vite
@@ -19,7 +21,6 @@ A aplicação desenvolvida tem a seguinte estrutura:
    - Styled-components
    - React icons
    - Typescript
-<br>
 2. back
    - Node.js
    - Express
