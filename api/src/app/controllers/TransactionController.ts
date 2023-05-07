@@ -13,6 +13,12 @@ const transactionTypes = [
 ];
 
 class TransactionController {
+  async index(request: Request, response: Response) {
+    const transactions = await transactionsRepository.findAll();
+
+    response.json(transactions);
+  }
+
   async store(request: Request, response: Response) {
     const salesTxt = request.files.sales as UploadedFile;
 
@@ -21,33 +27,31 @@ class TransactionController {
 
     const sales = salesTxtToJson(salesTxt.tempFilePath);
 
-    sales.forEach(async (sale) => {
+    for (let sale of sales) {
       try {
-        const productExists = await productsRepository.findByName(sale.product);
+        let productExists = await productsRepository.findByName(sale.product);
         let product = productExists;
         if (!productExists) {
           product = await productsRepository.create(sale.product);
         }
 
-        const sellerExists = await sellersRepository.findByName(sale.seller);
+        let sellerExists = await sellersRepository.findByName(sale.seller);
         let seller = sellerExists;
         if (!sellerExists) {
           seller = await sellersRepository.create(sale.seller);
         }
 
-        const transaction = await transactionsRepository.create({
+        await transactionsRepository.create({
           productId: product.id,
           sellerId: seller.id,
           amount: sale.amount,
           date: new Date(sale.date),
-          type: transactionTypes[sale.type],
+          type: transactionTypes[sale.type - 1],
         });
-
-        console.log(transaction);
       } catch (error) {
         console.log(error);
       }
-    });
+    }
 
     return response.status(201).json({ message: "Success" });
   }
