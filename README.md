@@ -1,3 +1,7 @@
+<h1 align="center">My sales</h1>
+
+<img src="./front/src/assets/sales-home.png">
+
 ## 📖 Sobre
 
 Trata-se de um projet que faz o upload de um arquivo de transações de produtos vendidos, normaliza os dados e os armazena em um banco de dados relacional.
