@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  db_postgres:
+    image: "postgres"
+    environment:
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "root"
+      POSTGRES_DB: "mysales"
+    tty: true
+    volumes:
+      - ./api/db_data:/var/lib/postgresql/db_postgres
+      - ./api/src/database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    ports:
+      - "5432:5432"
+
+  api_node:
+    build: ./api
+    container_name: api_node
+    command: sh -c "yarn && yarn dev"
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./api:/usr/app
+      - ./api/node_modules:/usr/app/node_modules
+    depends_on:
+      - db_postgres  
+
+  front_react:
+    build: ./front
+    container_name: front_react
+    command: sh -c "yarn && yarn dev"
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: ./front
+        target: /usr/app
+      - ./front/node_modules:/usr/app/node_modules
+    tty: true
+    
