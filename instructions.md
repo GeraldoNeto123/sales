@@ -1,7 +1,3 @@
-# Desafio de programação
-
-O objetivo desse teste é avaliar as suas habilidades em programação.
-
 ## Descrição do projeto
 
 Surgiu uma nova demanda urgente e precisamos de uma área exclusiva para fazer o
@@ -22,16 +18,6 @@ banco de dados relacional.
 
 Você deve utilizar o arquivo [sales.txt](sales.txt) para fazer o teste da
 aplicação. O formato esá descrito na seção "Formato do arquivo de entrada".
-
-## Configurando Seu Ambiente
-
-1. No diretório onde você descompactou o arquivo do desafio crie um repo git e
-   uma branch:
-   ```bash
-   git init --initial-branch=main
-   git checkout -b desafio
-   ```
-2. Desenvolva o desafio fazendo commits no repositório.
 
 ## Requisitos Funcionais
 
@@ -59,19 +45,6 @@ Sua aplicação deve:
 1. Faça o código mais legível e limpo possível.
 1. Escreva o código (nomes e comentários) em inglês. A documentação pode ser em
    português se preferir.
-1. Grave um vídeo de poucos minutos (até 5) mostrando sua solução em
-   funcionamento. Mesmo usando Docker já tivemos problemas.
-
-   Isso vai nos dar mais velocidade e agilidade para corrigir. Se não puder
-   gravar um vídeo, adicione imagens de todas as telas (mas o vídeo é
-   preferível). Ferramenta para gravar tela:
-
-   - Windows, Mac, Linux: OBS Studio
-   - Mac: gravador nativo (basta apertar cmd+shift+5)
-
-   Se o vídeo tiver tamanho final menor que 25mb, o que é improvável, pode
-   enviar por email mesmo. Do contrário, pode ser tanto por um link do Google
-   Drive ou do YouTube (não listado). Ambos gratuitos.
 
 ## Requisitos Bônus
 
@@ -103,38 +76,3 @@ Esses são os valores possíveis para o campo Tipo:
 | 2    | Venda afiliado    | Entrada  | +     |
 | 3    | Comissão paga     | Saída    | -     |
 | 4    | Comissão recebida | Entrada  | +     |
-
-## Avaliação
-
-Seu projeto será avaliado de acordo com os seguintes critérios:
-
-1. Documentação do setup do ambiente e execução que rode a aplicação com
-   sucesso.
-2. Cumprimento dos [requisitos funcionais](#Requisitos-Funcionais) e
-   [não funcionais](#Requisitos-Nao-Funcionais).
-3. Boa estruturação do componentes e layout de código, mas sem over engineering.
-4. Legibilidade do código.
-5. Boa cobertura de testes.
-6. Claridade e extensão da documentação.
-7. Cumprimento de algum [requisito bônus](#Requisitos-Bonus).
-
-## Entregando a Resposta do Desafio
-
-1. Crie um [git bundle](https://git-scm.com/docs/git-bundle) com o seu trabalho:
-   ```bash
-   git bundle create nome-sobrenome.bundle HEAD desafio
-   ```
-2. Envie o arquivo do bundle para nós via email, para a mesma pessoa que te
-   enviou o desafio.
-
-#### Verificar o bundle
-
-Para verificar o arquivo antes de enviar utilize o seguinte comando:
-
-```
-git clone nome-sobrenome.bundle hubla-take-home
-```
-
-A cópia do seu trabalho vai estar em `hubla-take-home`.
-
-## Boa Sorte!!!

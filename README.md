@@ -1,3 +1,10 @@
+## 📖 Sobre
+
+Trata-se de um projet que faz o upload de um arquivo de transações de produtos vendidos, normaliza os dados e os armazena em um
+banco de dados relacional.
+
+## 🔧 Como executar o projeto
+
 O projeto pode ser executado localmente com um único comando, para isso é necessário ter o Docker instalado na máquina.
 
 Na raiz do projeto, execute:
@@ -7,7 +14,7 @@ Na raiz do projeto, execute:
 O front-end estará rodando no endereço http://localhost:3000.
 O back-end estará rodando no endereço http://localhost:4000.
 
-Para realizar teste utilize o arquivo **sales.txt** que se encontra na raiz do projeto.
+Para realizar testes utilize o arquivo **sales.txt** que se encontra na raiz do projeto.
 ## Descrição do Projeto:
 A aplicação desenvolvida tem a seguinte estrutura:
 
