@@ -1,7 +1,6 @@
 ## 📖 Sobre
 
-Trata-se de um projet que faz o upload de um arquivo de transações de produtos vendidos, normaliza os dados e os armazena em um
-banco de dados relacional.
+Trata-se de um projet que faz o upload de um arquivo de transações de produtos vendidos, normaliza os dados e os armazena em um banco de dados relacional.
 
 ## 🔧 Como executar o projeto
 
